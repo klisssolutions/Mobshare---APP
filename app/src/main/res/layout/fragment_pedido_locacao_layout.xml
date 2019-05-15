@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="#f4f4f4">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/caution"
+            android:layout_marginRight="20dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carro:"
+            android:textSize="18dp"
+            android:fontFamily="@font/montserratregular"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ford Ka 16v"
+            android:textSize="18dp"
+            android:fontFamily="@font/montserratregular"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_black_24dp"
+            android:layout_marginLeft="110dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Locador:"
+            android:textSize="18dp"
+            android:fontFamily="@font/montserratregular"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Matheus Silva"
+            android:textSize="18dp"
+            android:fontFamily="@font/montserratregular"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="35dp"
+            android:text="Aceitar"
+            android:layout_marginLeft="50dp"
+            android:textColor="@color/branco"
+            android:background="@drawable/border_btn_entrar"/>
+
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="35dp"
+            android:text="Recusar"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/branco"
+            android:background="@drawable/border_btn_recusar"/>
+    </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

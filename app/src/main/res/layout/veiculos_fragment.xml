@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ListView
+        android:id="@+id/lstAnuncios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <!--
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_margin="20dp"
+            android:layout_gravity="right|bottom"
+            app:srcCompat="@drawable/filtro"
+            android:tint="#000"
+            android:background="@color/colorPrimaryDark"
+            android:id="@+id/txtFiltro"
+            />
+    -->
+
+        <ru.dimorinny.floatingtextbutton.FloatingTextButton
+            android:id="@+id/txtFiltro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:layout_margin="20dp"
+            app:floating_background_color="@color/azulPadrao"
+            app:floating_left_icon="@drawable/filter"
+            app:floating_title="Filtros"
+            app:floating_title_color="@android:color/white"
+            />
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

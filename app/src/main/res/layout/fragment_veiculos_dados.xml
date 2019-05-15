@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/veiculo"
+        android:scaleType="fitXY"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="Ford"
+            android:id="@+id/txtMarca"
+            android:fontFamily="@font/montserratregular"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22dp"
+            android:id="@+id/txtModelo"
+            android:textStyle="bold"
+            android:fontFamily="@font/montserratregular"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="Ano 2016"
+            android:id="@+id/txtAno"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserratregular"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="R$ 220/h"
+            android:id="@+id/txtValor"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/azulPadrao"
+            android:fontFamily="@font/montserratregular"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Com ar condicionado, cambio automático, quatro portas"
+            android:layout_marginTop="5dp"
+            android:id="@+id/txtAcessorio"
+            android:fontFamily="@font/montserratregular"
+            android:layout_marginBottom="20dp"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="70dp"
+            android:fontFamily="@font/montserratregular"
+            android:text="5/5"
+            android:id="@+id/txtNota"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="#dfd514"/>
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_star_black_24dp"/>
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/fundodados"
+        android:scaleType="fitXY"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/peerfil"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Katherine Lang"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/branco"
+            android:fontFamily="@font/montserratregular"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Entrou desde janeiro de 2015"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserratregular"
+            android:textAlignment="center"
+            android:textColor="@color/branco"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_star_black_24dp"/>
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_star_black_24dp"/>
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_star_black_24dp"/>
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_star_black_24dp"/>
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_star_half_black_24dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#fff"
+            >
+            <!--
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/btnAlugar"
+                android:layout_width="350dp"
+                android:layout_marginBottom="50dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/montserratregular"
+                android:textColor="@android:color/white"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:background="@drawable/border_btn_entrar"
+                android:text="Tenho interesse!"/>
+            -->
+            <ru.dimorinny.floatingtextbutton.FloatingTextButton
+                android:id="@+id/btnInteresse"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                app:floating_background_color="@color/azulPadrao"
+                app:floating_title="Tenho interesse!"
+                app:floating_title_color="@android:color/white"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+</ScrollView>
+
+
+
+<!--
+    <ImageView
+        android:id="@+id/imgVeiculoGrande"
+        android:layout_width="362dp"
+        android:layout_height="164dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeMarca"
+        app:srcCompat="@drawable/veiculo" />
+
+    <TextView
+        android:id="@+id/txtNomeModelo"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="EcoSport 16v 2018"
+        android:textAlignment="viewStart"
+        android:textColor="@color/azulPadrao"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtNomeMarca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/txtNomeMarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Marca: Ford"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="52dp" />
+
+    <Button
+        android:id="@+id/btnAlugar"
+        android:layout_width="152dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="116dp"
+        android:background="@color/azulPadrao"
+        android:text="Quero Alugar!"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeAcessorio" />
+
+    <TextView
+        android:id="@+id/txtEndereco"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="296dp"
+        android:text="Endereço:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgVeiculoGrande" />
+
+    <TextView
+        android:id="@+id/txtNomeEndereco"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="149dp"
+        android:text="Av Brigadeiro, n° 57 - São Paulo"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEndereco" />
+
+    <TextView
+        android:id="@+id/txtCor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="338dp"
+        android:text="Cor:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeEndereco" />
+
+    <TextView
+        android:id="@+id/txtNomeCor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="310dp"
+        android:text="Amarelo"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCor" />
+
+    <TextView
+        android:id="@+id/txtAcessorio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="282dp"
+        android:text="Acessórios:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeCor" />
+
+    <TextView
+        android:id="@+id/txtNomeAcessorio"
+        android:layout_width="240dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="128dp"
+        android:text="Ar condicionado, tela de video, cambio automático"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAcessorio" />
+-->
+

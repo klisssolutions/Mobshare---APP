@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#102840</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="azulPadrao">#102840</color>
+    <color name="azulEscuro">#0a1d30</color>
+    <color name="botaoCancelar">#e64c2e</color>
+    <color name="botaoSalvar">#40c621</color>
+    <color name="botaoLimpar">#f9e427</color>
+    <color name="branco">#000</color>
+</resources>

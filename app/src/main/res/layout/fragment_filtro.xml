@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FILTROS"
+        android:layout_marginBottom="20dp"
+        android:textAlignment="center"
+        android:background="#eaeaea"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="22sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tipo do veículo:"
+        android:textAlignment="center"
+        android:fontFamily="@font/montserratregular"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/bicyclee"
+            android:layout_marginLeft="60dp"
+            android:id="@+id/imgBicicleta"
+            />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/car"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/imgCarro"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/motorbiking"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/imgMoto"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selecione uma marca:"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserratregular"/>
+
+        <Spinner
+            android:id="@+id/cbMarca"
+            android:layout_width="360dp"
+            android:layout_height="26dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selecione um modelo:"
+            android:textAlignment="center"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserratregular"/>
+
+        <Spinner
+            android:id="@+id/cbModelo"
+            android:layout_width="360dp"
+            android:layout_height="26dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selecione uma kilometragem:"
+            android:textAlignment="center"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserratregular"/>
+
+        <Spinner
+            android:id="@+id/cbKm"
+            android:layout_width="360dp"
+            android:layout_height="26dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avaliação:"
+            android:textAlignment="center"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/montserratregular"
+            android:layout_marginBottom="20dp"/>
+
+        <RatingBar
+            android:id="@+id/rbAvaliacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:numStars="5"
+            android:theme="@style/RatingBar"/>
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:text="Filtrar"
+            android:id="@+id/btnFiltrar"
+            android:background="@drawable/border_btn_entrar"
+            android:textColor="#fff"
+            android:fontFamily="@font/montserratregular"/>
+
+    </LinearLayout>
+<!--
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FILTROS"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marca:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="30dp"/>
+
+        <Spinner
+            android:id="@+id/cbMarca"
+            android:layout_width="190dp"
+            android:layout_height="26dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modelo:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="30dp"/>
+
+        <Spinner
+            android:id="@+id/cbModelo"
+            android:layout_width="190dp"
+            android:layout_height="26dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KM:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="30dp"/>
+
+        <Spinner
+            android:id="@+id/cbKm"
+            android:layout_width="190dp"
+            android:layout_height="26dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Avaliação:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="30dp"/>
+
+        <Spinner
+            android:id="@+id/cbAvaliacao"
+            android:layout_width="190dp"
+            android:layout_height="26dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="140dp"
+            android:text="Filtrar"
+            android:id="@+id/btnFiltrar"
+            android:textColor="@color/branco"
+            android:background="@color/azulPadrao"/>
+    </LinearLayout>
+-->
+</LinearLayout>
