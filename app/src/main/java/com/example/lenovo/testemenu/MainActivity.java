@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.example.lenovo.testemenu.fragment.FragmentAnuncios;
 import com.example.lenovo.testemenu.fragment.FragmentCadastro;
 import com.example.lenovo.testemenu.fragment.FragmentLogin;
+import com.example.lenovo.testemenu.fragment.FragmentPedidoLocacao;
 import com.example.lenovo.testemenu.model.AnuncioResult;
 
 import com.example.lenovo.testemenu.view.ViewAnunciosFiltro;
@@ -127,6 +128,11 @@ public class MainActivity extends AppCompatActivity
             ft.replace(R.id.frameLayout, new FragmentLogin());
 
             ft.commit();
+        } else if (id == R.id.itemSolicitacaoMeusVeiculos) {
+
+            Fragment fragmentPedidoLocacao = new FragmentPedidoLocacao();
+
+            navegar(fragmentPedidoLocacao, fragmentPedidoLocacao.getTag());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

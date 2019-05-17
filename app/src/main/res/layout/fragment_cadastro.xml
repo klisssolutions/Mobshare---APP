@@ -23,12 +23,6 @@ precisamos criar sua conta:"
         android:textSize="16sp"
         android:textAlignment="center"/>
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_marginTop="20dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/perfil"
-        android:layout_gravity="center"/>
 
 
     <LinearLayout

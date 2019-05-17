@@ -83,8 +83,8 @@ public class FragmentVeiculoDados extends Fragment implements VeiculoView {
 
                 activity.navegar(fragmentsolicitacaoLocacao, fragmentsolicitacaoLocacao.TAG);
 
-                Log.d("usuario", activity.idUsuarioLogado+"");
-                Log.d("veiculo", veiculo.getIdVeiculo()+"");
+               // Log.d("usuario", activity.idUsuarioLogado+"");
+               // Log.d("veiculo", veiculo.getIdVeiculo()+"");
             }
         });
 

@@ -68,8 +68,8 @@ public interface ClienteService {
                                               @Query("idVeiculo") int idVeiculo, @Query("txtHorarioInicio") String horarioInicio,
                                               @Query("txtHorarioFim") String horarioFim);
 
-    @GET("anuncios_mobile.php")
-    Call<List<VSolicitacaoLocacao>>  listarSolicitacoes();
+    @GET("locacao.php")
+    Call<List<VSolicitacaoLocacao>>  listarSolicitacoes(@Query("modo") String modo, @Query("id") int id);
 
 
 

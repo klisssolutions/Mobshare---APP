@@ -28,6 +28,7 @@ public class VeiculoPresenter {
     public void buscarVeiculo(int idVeiculo){
         Call<Veiculo> call = service.buscarVeiculo("buscar", idVeiculo);
 
+
         call.enqueue(new Callback<Veiculo>() {
             @Override
             public void onResponse(Call<Veiculo> call, Response<Veiculo> response) {
