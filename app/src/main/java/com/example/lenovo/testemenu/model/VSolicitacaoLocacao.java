@@ -1,7 +1,10 @@
 package com.example.lenovo.testemenu.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class VSolicitacaoLocacao {
 
+    @SerializedName("idSolicitacaoLocacao")
     private int idSolicitacao_Locacao;
     private int idCliente;
     private String nomeCliente;

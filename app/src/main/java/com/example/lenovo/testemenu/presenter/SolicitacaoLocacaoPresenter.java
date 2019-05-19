@@ -6,7 +6,9 @@ import com.example.lenovo.testemenu.model.ApiResult;
 import com.example.lenovo.testemenu.model.Cliente;
 import com.example.lenovo.testemenu.model.SolicitacaoLocacao;
 import com.example.lenovo.testemenu.service.ClienteService;
+import com.example.lenovo.testemenu.view.AceitacaoLocacaoView;
 import com.example.lenovo.testemenu.view.CadastroView;
+import com.example.lenovo.testemenu.view.RecusaLocacaoView;
 import com.example.lenovo.testemenu.view.ViewSolicitacaoLocacao;
 
 import retrofit2.Call;
@@ -21,15 +23,13 @@ public class SolicitacaoLocacaoPresenter {
     ClienteService cService;
     ViewSolicitacaoLocacao slView;
 
-
     public SolicitacaoLocacaoPresenter(ClienteService cService, ViewSolicitacaoLocacao slView){
         this.cService = cService;
         this.slView = slView;
     }
 
+
     public void solicitarLocacao(SolicitacaoLocacao solicitacaoLocacao){
-
-
 
         cService.inserirSolicitacao_Locacao("INSERIR", solicitacaoLocacao.getIdCliente(), solicitacaoLocacao.getIdVeiculo(),
                 solicitacaoLocacao.getHorarioInicio(), solicitacaoLocacao.getHorarioFim()).enqueue(new Callback<ApiResult>() {

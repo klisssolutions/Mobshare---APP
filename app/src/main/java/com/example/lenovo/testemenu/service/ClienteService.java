@@ -72,6 +72,13 @@ public interface ClienteService {
     Call<List<VSolicitacaoLocacao>>  listarSolicitacoes(@Query("modo") String modo, @Query("id") int id);
 
 
+    @GET("locacao.php")
+    Call<ApiResult>  aceitarSolicitacao(@Query("modo") String modo, @Query("id") int id);
+
+    @GET("locacao.php")
+    Call<ApiResult>  recusarSolicitacao(@Query("modo") String modo, @Query("id") int id);
+
+
 
 
 }

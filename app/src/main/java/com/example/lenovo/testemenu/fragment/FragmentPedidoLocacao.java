@@ -37,7 +37,11 @@ public class FragmentPedidoLocacao extends Fragment implements ViewListagemSolic
 
         presenter = new ListagemSolicitacaoLocacaoPresenter(this, ServiceFactory.create());
 
+
+
         activity = (MainActivity) getActivity();
+
+        presenter.listarSolicitacoes(activity.idUsuarioLogado);
 
         lstLocacoes = v.findViewById(R.id.lstLocacoes);
         pedidoLocacaoAdapter = new PedidoLocacaoAdapter(getContext());

@@ -1,6 +1,8 @@
 package com.example.lenovo.testemenu.presenter;
 
 
+import android.util.Log;
+
 import com.example.lenovo.testemenu.model.VSolicitacaoLocacao;
 import com.example.lenovo.testemenu.service.ClienteService;
 import com.example.lenovo.testemenu.view.ViewListagemSolicitacaoLocacao;
@@ -30,12 +32,13 @@ public class ListagemSolicitacaoLocacaoPresenter {
             @Override
             public void onResponse(Call<List<VSolicitacaoLocacao>> call, Response<List<VSolicitacaoLocacao>> response) {
                 vsolicitacaoLocacao = response.body();
+                Log.d("restful", vsolicitacaoLocacao.get(0).getIdSolicitacao_Locacao()+"");
                 view.sucesso(vsolicitacaoLocacao);
             }
 
             @Override
             public void onFailure(Call<List<VSolicitacaoLocacao>> call, Throwable t) {
-
+                Log.d("restful", t.getMessage());
             }
         });
 
