@@ -35,7 +35,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Carro:"
+                android:text="Veiculo:"
                 android:textSize="18dp"
                 android:fontFamily="@font/montserratregular"
                 android:layout_marginRight="5dp"
@@ -45,6 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ford Ka 16v"
+                android:id="@+id/txtVeiculo"
                 android:textSize="18dp"
                 android:fontFamily="@font/montserratregular"/>
 
@@ -60,7 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Data da locação:"
+                android:text="Inicio:"
                 android:textSize="18dp"
                 android:fontFamily="@font/montserratregular"
                 android:layout_marginRight="5dp"
@@ -70,11 +71,70 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="22/10/2017"
+                android:id="@+id/txtInicio"
+                android:textSize="18dp"
+                android:fontFamily="@font/montserratregular"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fim:"
+                android:textSize="18dp"
+                android:fontFamily="@font/montserratregular"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22/10/2017"
+                android:id="@+id/txtFim"
+                android:textSize="18dp"
+                android:fontFamily="@font/montserratregular"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Valor:"
+                android:textSize="18dp"
+                android:fontFamily="@font/montserratregular"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ 500"
+                android:id="@+id/txtValor"
                 android:textSize="18dp"
                 android:fontFamily="@font/montserratregular"/>
 
         </LinearLayout>
 
+
+        <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Recebido"
+            android:id="@+id/btnConfimacao"
+        android:textColor="#fff"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border_btn_entrar"
+        />
 
 
     </LinearLayout>

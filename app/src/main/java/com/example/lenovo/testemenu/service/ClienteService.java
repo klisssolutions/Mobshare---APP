@@ -5,6 +5,7 @@ import com.example.lenovo.testemenu.model.ApiResult;
 import com.example.lenovo.testemenu.model.LoginResult;
 import com.example.lenovo.testemenu.model.Marca;
 import com.example.lenovo.testemenu.model.Modelo;
+import com.example.lenovo.testemenu.model.VHistorico_Locacao;
 import com.example.lenovo.testemenu.model.VSolicitacaoLocacao;
 import com.example.lenovo.testemenu.model.Veiculo;
 
@@ -77,6 +78,16 @@ public interface ClienteService {
 
     @GET("locacao.php")
     Call<ApiResult>  recusarSolicitacao(@Query("modo") String modo, @Query("id") int id);
+
+
+    @GET("locacao.php")
+    Call<List<VHistorico_Locacao>>  listarHistorico(@Query("modo") String modo, @Query("id") int id);
+
+    @GET("locacao.php")
+    Call<ApiResult>  devolver(@Query("modo") String modo, @Query("id") int id);
+
+    @GET("locacao.php")
+    Call<ApiResult>  receber(@Query("modo") String modo, @Query("id") int id);
 
 
 

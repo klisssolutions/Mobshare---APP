@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.lenovo.testemenu.fragment.FragmentAnuncios;
 import com.example.lenovo.testemenu.fragment.FragmentCadastro;
+import com.example.lenovo.testemenu.fragment.FragmentHistorico;
 import com.example.lenovo.testemenu.fragment.FragmentLogin;
 import com.example.lenovo.testemenu.fragment.FragmentPedidoLocacao;
 import com.example.lenovo.testemenu.model.AnuncioResult;
@@ -115,6 +116,12 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction ft = fm.beginTransaction();
 
             ft.replace(R.id.frameLayout, new FragmentAnuncios());
+
+            ft.commit();
+        } else if (id == R.id.itemHistorico) {
+            FragmentTransaction ft = fm.beginTransaction();
+
+            ft.replace(R.id.frameLayout, new FragmentHistorico());
 
             ft.commit();
         } else if (id == R.id.itemSair) {

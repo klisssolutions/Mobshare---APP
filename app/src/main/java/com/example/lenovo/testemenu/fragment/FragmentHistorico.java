@@ -7,10 +7,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.lenovo.testemenu.MainActivity;
 import com.example.lenovo.testemenu.R;
+import com.example.lenovo.testemenu.adapter.HistoricoAdapter;
 import com.example.lenovo.testemenu.model.Veiculo;
 import com.example.lenovo.testemenu.presenter.HistoricoPresenter;
 import com.example.lenovo.testemenu.view.HistoricoView;
@@ -21,31 +23,25 @@ public class FragmentHistorico extends Fragment implements HistoricoView{
     HistoricoPresenter historicoPresenter;
 
     Veiculo veiculo;
+    HistoricoAdapter historicoAdapter;
 
     MainActivity activity;
-
-    TextView txtNomeModelo;
-    TextView txtNomeMarca;
+    ListView lstHistoricoLocacoes;
 
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_veiculos_dados, container, false);
+        View v = inflater.inflate(R.layout.fragment_historico_locacao, container, false);
 
+        lstHistoricoLocacoes = v.findViewById(R.id.lstHistoricoLocacoes);
+
+        lstHistoricoLocacoes.setAdapter(historicoAdapter);
 
 
 
         activity = (MainActivity) getActivity();
-
-        
-
-        txtNomeModelo = v.findViewById(R.id.txtModelo);
-        txtNomeMarca = v.findViewById(R.id.txtMarca);
-
-
-
 
 
         return v;

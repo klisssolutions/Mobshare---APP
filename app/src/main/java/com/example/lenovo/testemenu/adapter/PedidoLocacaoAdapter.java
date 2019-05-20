@@ -45,6 +45,8 @@ public class PedidoLocacaoAdapter extends ArrayAdapter<VSolicitacaoLocacao> impl
 
         View v = convertView;
 
+
+
         if (v == null){
             v = LayoutInflater.from(getContext()).inflate(R.layout.fragment_pedido_locacao_layout, parent, false);
         }
