@@ -34,7 +34,6 @@ public class HistoricoAdapter extends ArrayAdapter<VHistorico_Locacao> {
         View v = convertView;
 
 
-
         if (v == null){
             v = LayoutInflater.from(getContext()).inflate(R.layout.fragment_historico_locacao_layout, parent, false);
         }
@@ -46,6 +45,16 @@ public class HistoricoAdapter extends ArrayAdapter<VHistorico_Locacao> {
         TextView txtFim = v.findViewById(R.id.txtFim);
         TextView txtValor = v.findViewById(R.id.txtValor);
         Button btnConfirmacao = v.findViewById(R.id.btnConfimacao);
+
+
+
+//        if(vHistorico_Locacao.getIdDono() == activity.idUsuarioLogado && vHistorico_Locacao.getRecebido() == 0){
+//            btnConfirmacao.setText("Receber");
+//        }else if(vHistorico_Locacao.getIdDono() != activity.idUsuarioLogado && vHistorico_Locacao.getDevolvido() == 0){
+//            btnConfirmacao.setText("Devolver");
+//        }else{
+//            btnConfirmacao.setVisibility(View.INVISIBLE);
+//        }
 
         txtVeiculo.setText(vHistorico_Locacao.getVeiculo());
         txtInicio.setText(vHistorico_Locacao.getHorarioInicio());

@@ -39,12 +39,12 @@ public class HistoricoPresenter{
                 vHistorico_locacaos = response.body();
                 Log.d("ERRo", vHistorico_locacaos.get(0).getVeiculo());
 
-                historicoView.sucesso();
+                historicoView.sucesso(vHistorico_locacaos);
             }
 
             @Override
             public void onFailure(Call<List<VHistorico_Locacao>> call, Throwable t) {
-                Log.d("ERRo", "pra variar");
+                Log.d("ERRo", t.getMessage());
             }
         });
 

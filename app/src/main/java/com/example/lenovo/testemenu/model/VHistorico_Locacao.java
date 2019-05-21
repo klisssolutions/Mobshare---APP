@@ -4,7 +4,7 @@ public class VHistorico_Locacao {
 
     private int idLocacao;
     private int idCliente;
-    private int nomeCliente;
+    private String nomeCliente;
     private int idDono;
     private String veiculo;
     private String horarioInicio;
@@ -30,11 +30,11 @@ public class VHistorico_Locacao {
         this.idCliente = idCliente;
     }
 
-    public int getNomeCliente() {
+    public String getNomeCliente() {
         return nomeCliente;
     }
 
-    public void setNomeCliente(int nomeCliente) {
+    public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
     }
 
