@@ -22,8 +22,9 @@ public class HistoricoAdapter extends ArrayAdapter<VHistorico_Locacao> {
 
 
     //criando a lista dos anuncios
-    public HistoricoAdapter(Context ctx){
+    public HistoricoAdapter(Context ctx, MainActivity activity){
         super(ctx, 0, new ArrayList<VHistorico_Locacao>());
+        this.activity = activity;
 
     }
 
@@ -48,13 +49,13 @@ public class HistoricoAdapter extends ArrayAdapter<VHistorico_Locacao> {
 
 
 
-//        if(vHistorico_Locacao.getIdDono() == activity.idUsuarioLogado && vHistorico_Locacao.getRecebido() == 0){
-//            btnConfirmacao.setText("Receber");
-//        }else if(vHistorico_Locacao.getIdDono() != activity.idUsuarioLogado && vHistorico_Locacao.getDevolvido() == 0){
-//            btnConfirmacao.setText("Devolver");
-//        }else{
-//            btnConfirmacao.setVisibility(View.INVISIBLE);
-//        }
+        if(vHistorico_Locacao.getIdDono() == activity.idUsuarioLogado && vHistorico_Locacao.getRecebido() == 0){
+            btnConfirmacao.setText("Receber");
+        }else if(vHistorico_Locacao.getIdDono() != activity.idUsuarioLogado && vHistorico_Locacao.getDevolvido() == 0){
+            btnConfirmacao.setText("Devolver");
+        }else{
+            btnConfirmacao.setVisibility(View.INVISIBLE);
+        }
 
         txtVeiculo.setText(vHistorico_Locacao.getVeiculo());
         txtInicio.setText(vHistorico_Locacao.getHorarioInicio());

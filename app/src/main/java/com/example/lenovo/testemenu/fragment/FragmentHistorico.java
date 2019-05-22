@@ -44,7 +44,7 @@ public class FragmentHistorico extends Fragment implements HistoricoView{
 
         lstHistoricoLocacoes = v.findViewById(R.id.lstHistoricoLocacoes);
 
-        historicoAdapter = new HistoricoAdapter(getContext());
+        historicoAdapter = new HistoricoAdapter(getContext(), activity);
 
         lstHistoricoLocacoes.setAdapter(historicoAdapter);
 
