@@ -3,11 +3,13 @@ package com.example.lenovo.testemenu.presenter;
 import android.util.Log;
 
 import com.example.lenovo.testemenu.model.AnuncioResult;
+import com.example.lenovo.testemenu.model.ApiResult;
 import com.example.lenovo.testemenu.model.VHistorico_Locacao;
 import com.example.lenovo.testemenu.service.ClienteService;
 import com.example.lenovo.testemenu.view.AnunciosView;
 import com.example.lenovo.testemenu.view.DevolverView;
 import com.example.lenovo.testemenu.view.HistoricoView;
+import com.example.lenovo.testemenu.view.ReceberView;
 
 import java.util.List;
 
@@ -18,14 +20,23 @@ import retrofit2.Response;
 public class HistoricoPresenter{
 
     HistoricoView historicoView;
+
+
+
     ClienteService clienteService;
+    ApiResult apiResult;
 
     List<VHistorico_Locacao> vHistorico_locacaos;
+
+
 
     public HistoricoPresenter(HistoricoView historicoView, ClienteService clienteService){
         this.historicoView = historicoView;
         this.clienteService = clienteService;
     }
+
+
+
 
     public void listarHistorico(int idLogado){
 

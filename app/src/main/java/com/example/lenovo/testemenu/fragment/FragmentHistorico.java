@@ -19,11 +19,12 @@ import com.example.lenovo.testemenu.model.Veiculo;
 import com.example.lenovo.testemenu.presenter.HistoricoPresenter;
 import com.example.lenovo.testemenu.service.ServiceFactory;
 import com.example.lenovo.testemenu.view.HistoricoView;
+import com.example.lenovo.testemenu.view.ReceberView;
 
 import java.util.List;
 
 public class FragmentHistorico extends Fragment implements HistoricoView{
-    static String TAG = "FragmentHistorico";
+    public static String TAG = "FragmentHistorico";
 
     HistoricoPresenter historicoPresenter;
 
@@ -65,4 +66,5 @@ public class FragmentHistorico extends Fragment implements HistoricoView{
         historicoAdapter.clear();
         historicoAdapter.addAll(historico_locacoes);
     }
+
 }

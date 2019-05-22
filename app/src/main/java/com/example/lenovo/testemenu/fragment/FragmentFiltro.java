@@ -38,7 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FragmentFiltro extends Fragment implements MarcaView, ModeloView {
-    static String TAG = "FragmentFiltro";
+    public static String TAG = "FragmentFiltro";
 
     ViewAnunciosFiltro viewAnunciosFiltro;
 
