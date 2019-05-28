@@ -1,5 +1,6 @@
 package com.example.lenovo.testemenu.adapter;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -100,10 +101,15 @@ public class HistoricoAdapter extends ArrayAdapter<VHistorico_Locacao> implement
     }
 
     @Override
-    public void sucessoReceber() {
+    public void sucessoReceber(int idLocacao) {
 
         alert.alert("Pronto!", "Você confirmou o recebimento do veiculo", "Ok");
         fragmentAvaliacao = new FragmentAvaliacao();
+        Bundle bundle = new Bundle();
+        bundle.putString("tipoAvaliacao", "cliente");
+        bundle.putInt("idLocacao", idLocacao);
+        fragmentAvaliacao.setArguments(bundle);
+
         activity.navegar(fragmentAvaliacao, fragmentAvaliacao.TAG);
     }
 

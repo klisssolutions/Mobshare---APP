@@ -89,6 +89,11 @@ public interface ClienteService {
     @GET("locacao.php")
     Call<ApiResult>  receber(@Query("modo") String modo, @Query("id") int id);
 
+    @GET("locacao.php")
+    Call<ApiResult>  avaliar(@Query("modo") String modo, @Query("nota") float nota, @Query("txtDepoimento") String depoimento,
+                             @Query("tipoAvaliacao") String tipoAvaliacao,
+                             @Query("idLocacao") int idLocacao);
+
 
 
 

@@ -23,7 +23,7 @@ public class ReceberPresenter {
         this.clienteService = clienteService;
     }
 
-    public void receberVeiculo(int idLocacao){
+    public void receberVeiculo(final int idLocacao){
 
 
 
@@ -37,7 +37,7 @@ public class ReceberPresenter {
 
                 if(!apiResult.isErro()){
 
-                    receberView.sucessoReceber();
+                    receberView.sucessoReceber(idLocacao);
 
                 }else{
 
