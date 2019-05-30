@@ -73,6 +73,8 @@ public class AnunciosAdapter extends ArrayAdapter<AnuncioResult> {
 
         String urlImagem = "http:10.0.2.2/Mobshare/arquivos/"+anuncioResult.getFotoVeiculo();
 
+        //String urlImagem = "http:mob.com.br/Mobshare/arquivos/"+anuncioResult.getFotoVeiculo();
+
         Picasso.get().load(urlImagem).into(imgVeiculo);
 
 
