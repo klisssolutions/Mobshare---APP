@@ -1,5 +1,7 @@
 package com.example.lenovo.testemenu.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,6 +15,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 
+import com.example.lenovo.testemenu.MainActivity;
 import com.example.lenovo.testemenu.R;
 import com.example.lenovo.testemenu.model.Avaliacao;
 import com.example.lenovo.testemenu.presenter.AvaliacaoPresenter;
@@ -27,6 +30,8 @@ public class FragmentAvaliacao extends Fragment implements AvaliacaoView {
     EditText edDepoimento;
     RatingBar rbAvaliacao;
     Avaliacao avaliacao;
+
+    MainActivity activity;
 
     Bundle bundle;
 
@@ -47,6 +52,7 @@ public class FragmentAvaliacao extends Fragment implements AvaliacaoView {
         }
 
 
+        activity = (MainActivity) getActivity();
         btnAvaliar = v.findViewById(R.id.btnAvaliar);
         edDepoimento = v.findViewById(R.id.edDepoimento);
         rbAvaliacao = v.findViewById(R.id.rbAvaliacao);
@@ -74,11 +80,30 @@ public class FragmentAvaliacao extends Fragment implements AvaliacaoView {
 
     @Override
     public void sucessoAvaliacao() {
-
+        alert("Obrigado!", "Sua avaliação foi registrada com sucesso!", "OK");
     }
 
     @Override
     public void fracassoAvaliacao() {
 
     }
+
+
+    public void alert(String titulo, String mensagem, String positive) {
+        final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+
+        alertDialogBuilder.setTitle(titulo);
+        alertDialogBuilder.setMessage(mensagem);
+        alertDialogBuilder.setPositiveButton(positive, new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+                FragmentAnuncios fragmentAnuncios = new FragmentAnuncios();
+                activity.navegar(fragmentAnuncios, fragmentAnuncios.TAG);
+            }
+        });
+
+
+        alertDialogBuilder.show();
+    }
+
 }

@@ -70,10 +70,13 @@ public class HistoricoAdapter extends ArrayAdapter<VHistorico_Locacao> implement
 
         if(vHistorico_Locacao.getIdDono() == activity.idUsuarioLogado && vHistorico_Locacao.getRecebido() == 0){
             btnConfirmacao.setText("Receber");
+            Log.d("tcc", "Receber"+activity.idUsuarioLogado +", " +vHistorico_Locacao.getIdLocacao()+", "+ vHistorico_Locacao.getRecebido()+"");
         }else if(vHistorico_Locacao.getIdDono() != activity.idUsuarioLogado && vHistorico_Locacao.getDevolvido() == 0){
             btnConfirmacao.setText("Devolver");
+            Log.d("tcc", "Receber"+activity.idUsuarioLogado +", " +vHistorico_Locacao.getIdLocacao()+", "+ vHistorico_Locacao.getRecebido()+"");
         }else{
             btnConfirmacao.setVisibility(View.INVISIBLE);
+            Log.d("tcc", "aaaa"+activity.idUsuarioLogado +", " +vHistorico_Locacao.getIdLocacao()+", "+ vHistorico_Locacao.getRecebido()+"");
         }
 
         txtVeiculo.setText(vHistorico_Locacao.getVeiculo());
@@ -109,6 +112,8 @@ public class HistoricoAdapter extends ArrayAdapter<VHistorico_Locacao> implement
         bundle.putString("tipoAvaliacao", "cliente");
         bundle.putInt("idLocacao", idLocacao);
         fragmentAvaliacao.setArguments(bundle);
+
+        this.clear();
 
         activity.navegar(fragmentAvaliacao, fragmentAvaliacao.TAG);
     }
