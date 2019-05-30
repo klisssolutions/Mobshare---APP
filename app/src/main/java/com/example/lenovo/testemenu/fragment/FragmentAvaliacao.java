@@ -97,8 +97,9 @@ public class FragmentAvaliacao extends Fragment implements AvaliacaoView {
         alertDialogBuilder.setPositiveButton(positive, new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int which) {
-                FragmentAnuncios fragmentAnuncios = new FragmentAnuncios();
-                activity.navegar(fragmentAnuncios, fragmentAnuncios.TAG);
+
+                FragmentHistorico fragmentHistorico = new FragmentHistorico();
+                activity.navegar(fragmentHistorico, fragmentHistorico.TAG);
             }
         });
 

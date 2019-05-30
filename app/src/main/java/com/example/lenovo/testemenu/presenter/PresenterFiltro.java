@@ -30,7 +30,7 @@ public class PresenterFiltro {
 
     public void carregarAnuncios(Filtro filtro){
         Call<List<AnuncioResult>> call = service.filtrarAnuncios("filtrar", filtro.getIdMarca(), filtro.getIdModelo(),
-                 filtro.getKm(), filtro.getAvaliacao(), filtro.getIdTipoVeiculo());
+                 filtro.getKm(), filtro.getAvaliacao(), filtro.getIdTipoVeiculo(), filtro.getUF(), filtro.getCidade());
 
 
 

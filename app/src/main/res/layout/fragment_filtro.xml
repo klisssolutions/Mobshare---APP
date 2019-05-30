@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Selecione uma marca:"
-            android:layout_marginTop="30dp"
+
             android:textAlignment="center"
             android:fontFamily="@font/montserratregular"/>
 
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:text="Selecione um modelo:"
             android:textAlignment="center"
-            android:layout_marginTop="30dp"
+
             android:fontFamily="@font/montserratregular"/>
 
         <Spinner
@@ -94,11 +94,40 @@
             android:layout_height="wrap_content"
             android:text="Selecione uma kilometragem:"
             android:textAlignment="center"
-            android:layout_marginTop="30dp"
+
             android:fontFamily="@font/montserratregular"/>
 
         <Spinner
             android:id="@+id/cbKm"
+            android:layout_width="360dp"
+            android:layout_height="26dp"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UF:"
+            android:textAlignment="center"
+
+            android:fontFamily="@font/montserratregular"/>
+
+        <Spinner
+            android:id="@+id/cbUF"
+            android:layout_width="360dp"
+            android:layout_height="26dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cidade:"
+            android:textAlignment="center"
+
+            android:fontFamily="@font/montserratregular"/>
+
+        <Spinner
+            android:id="@+id/cbCidade"
             android:layout_width="360dp"
             android:layout_height="26dp"
             />
@@ -108,7 +137,7 @@
             android:layout_height="wrap_content"
             android:text="Avaliação:"
             android:textAlignment="center"
-            android:layout_marginTop="30dp"
+
             android:fontFamily="@font/montserratregular"
             android:layout_marginBottom="20dp"/>
 
@@ -124,7 +153,7 @@
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
+
             android:text="Filtrar"
             android:id="@+id/btnFiltrar"
             android:background="@drawable/border_btn_entrar"

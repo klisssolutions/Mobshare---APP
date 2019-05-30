@@ -6,6 +6,8 @@ public class Filtro {
     private int idTipoVeiculo;
     private String avaliacao;
     private String km;
+    private String UF;
+    private String cidade;
 
 
     public int getIdMarca() {
@@ -46,5 +48,21 @@ public class Filtro {
 
     public void setIdTipoVeiculo(int idTipoVeiculo) {
         this.idTipoVeiculo = idTipoVeiculo;
+    }
+
+    public String getUF() {
+        return UF;
+    }
+
+    public void setUF(String UF) {
+        this.UF = UF;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 }

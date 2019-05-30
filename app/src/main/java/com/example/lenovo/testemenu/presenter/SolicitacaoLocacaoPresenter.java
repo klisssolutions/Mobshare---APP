@@ -37,7 +37,7 @@ public class SolicitacaoLocacaoPresenter {
             public void onResponse(Call<ApiResult> call, Response<ApiResult> response) {
                 result = response.body();
 
-                if (result.isErro()){
+                if (!result.isErro()){
                     Log.d("roty", "sucesso");
                     slView.sucesso();
                 }else{

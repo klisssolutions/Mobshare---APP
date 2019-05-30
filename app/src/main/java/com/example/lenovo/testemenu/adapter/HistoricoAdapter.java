@@ -45,6 +45,7 @@ public class HistoricoAdapter extends ArrayAdapter<VHistorico_Locacao> implement
         alert = new Alert(getContext());
         this.activity = activity;
 
+
     }
 
     @NonNull
@@ -112,8 +113,6 @@ public class HistoricoAdapter extends ArrayAdapter<VHistorico_Locacao> implement
         bundle.putString("tipoAvaliacao", "cliente");
         bundle.putInt("idLocacao", idLocacao);
         fragmentAvaliacao.setArguments(bundle);
-
-        this.clear();
 
         activity.navegar(fragmentAvaliacao, fragmentAvaliacao.TAG);
     }

@@ -26,18 +26,22 @@ import com.example.lenovo.testemenu.model.Marca;
 import com.example.lenovo.testemenu.model.Modelo;
 import com.example.lenovo.testemenu.presenter.MarcaPresenter;
 import com.example.lenovo.testemenu.presenter.ModeloPresenter;
+import com.example.lenovo.testemenu.presenter.PresenterCidade;
 import com.example.lenovo.testemenu.presenter.PresenterFiltro;
+import com.example.lenovo.testemenu.presenter.PresenterUF;
 import com.example.lenovo.testemenu.service.ServiceFactory;
 import com.example.lenovo.testemenu.view.AnunciosView;
 import com.example.lenovo.testemenu.view.FiltroView;
 import com.example.lenovo.testemenu.view.MarcaView;
 import com.example.lenovo.testemenu.view.ModeloView;
 import com.example.lenovo.testemenu.view.ViewAnunciosFiltro;
+import com.example.lenovo.testemenu.view.ViewCidade;
+import com.example.lenovo.testemenu.view.ViewUF;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentFiltro extends Fragment implements MarcaView, ModeloView {
+public class FragmentFiltro extends Fragment implements MarcaView, ModeloView, ViewUF, ViewCidade {
     public static String TAG = "FragmentFiltro";
 
     ViewAnunciosFiltro viewAnunciosFiltro;
@@ -50,10 +54,15 @@ public class FragmentFiltro extends Fragment implements MarcaView, ModeloView {
     Spinner cbMarca;
     Spinner cbModelo;
     Spinner cbKM;
+    Spinner cbUF;
+    Spinner cbCidade;
     RatingBar rbAvaliacao;
     ImageView imgCarro;
     ImageView imgMoto;
     ImageView imgBicicleta;
+
+    String UFS[];
+    String cidades[];
 
 
     KM km;
@@ -65,6 +74,8 @@ public class FragmentFiltro extends Fragment implements MarcaView, ModeloView {
     //PresenterFiltro presenterFiltro;
     MarcaPresenter marcaPresenter;
     ModeloPresenter modeloPresenter;
+    PresenterUF presenterUF;
+    PresenterCidade presenterCidade;
 
     @Nullable
     @Override
@@ -78,6 +89,8 @@ public class FragmentFiltro extends Fragment implements MarcaView, ModeloView {
         btnFiltrar = v.findViewById(R.id.btnFiltrar);
         cbMarca  = v.findViewById(R.id.cbMarca);
         cbModelo  = v.findViewById(R.id.cbModelo);
+        cbUF  = v.findViewById(R.id.cbUF);
+        cbCidade = v.findViewById(R.id.cbCidade);
         rbAvaliacao= v.findViewById(R.id.rbAvaliacao);
 
         imgBicicleta = v.findViewById(R.id.imgBicicleta);
@@ -115,6 +128,7 @@ public class FragmentFiltro extends Fragment implements MarcaView, ModeloView {
 
         marcaPresenter = new MarcaPresenter(this, ServiceFactory.create());
         modeloPresenter = new ModeloPresenter(this, ServiceFactory.create());
+        presenterUF = new PresenterUF(ServiceFactory.create(), this);
 
 
         filtro.setAvaliacao("Selecione");
@@ -144,6 +158,8 @@ public class FragmentFiltro extends Fragment implements MarcaView, ModeloView {
                 bundle.putString("km", filtro.getKm()+"");
                 bundle.putString("avaliacao", filtro.getAvaliacao());
                 bundle.putInt("idTipoVeiculo", filtro.getIdTipoVeiculo());
+                bundle.putString("UF", filtro.getUF());
+                bundle.putString("cidade", filtro.getCidade());
 
                 fragmentAnuncios.setArguments(bundle);
 
@@ -194,6 +210,35 @@ public class FragmentFiltro extends Fragment implements MarcaView, ModeloView {
             }
         });
 
+        cbUF.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                filtro.setUF(UFS[position]);
+                presenterCidade = new PresenterCidade(ServiceFactory.create(), FragmentFiltro.this);
+
+                presenterCidade.carregarCidades(UFS[position]);//passo a uf selecionada para puxar as cidades daquela UF
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        cbCidade.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Log.d("beijo", cidades[position]);
+                filtro.setCidade(cidades[position]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
 
         return v;
     }
@@ -229,6 +274,8 @@ public class FragmentFiltro extends Fragment implements MarcaView, ModeloView {
         super.onResume();
         marcaPresenter.carregarMarcas();
         modeloPresenter.carregarModelos();
+        presenterUF.carregarUF();
+
 
     }
 
@@ -269,6 +316,32 @@ public class FragmentFiltro extends Fragment implements MarcaView, ModeloView {
     }
 
 
+    @Override
+    public void sucessoUF(String[] UFS) {
 
+        this.UFS = UFS;
+        ArrayAdapter<String> adapterUF = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, this.UFS);
+        adapterUF.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+        cbUF.setAdapter(adapterUF);
+    }
+
+    @Override
+    public void fracassoUF() {
+
+    }
+
+    @Override
+    public void sucessoCidade(String[] cidades) {
+        this.cidades = cidades;
+        ArrayAdapter<String> adapterCidade = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, this.cidades);
+        adapterCidade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        cbCidade.setAdapter(adapterCidade);
+    }
+
+    @Override
+    public void fracassoCidade() {
+
+    }
 }

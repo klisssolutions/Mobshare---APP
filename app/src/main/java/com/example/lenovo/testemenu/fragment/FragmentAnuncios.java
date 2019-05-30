@@ -71,6 +71,10 @@ public class FragmentAnuncios extends Fragment implements AnunciosView, FiltroVi
             Log.d("avaliacao", filtro.getAvaliacao()+"");
             filtro.setIdTipoVeiculo(bundle.getInt("idTipoVeiculo"));
             Log.d("avaliacao", filtro.getAvaliacao()+"");
+            filtro.setCidade(bundle.getString("cidade"));
+            Log.d("CIDADE", filtro.getCidade()+"");
+            filtro.setUF(bundle.getString("UF"));
+            Log.d("uf", filtro.getUF()+"");
             presenterFiltro = new PresenterFiltro(this, ServiceFactory.create());
 
             presenterFiltro.carregarAnuncios(filtro);

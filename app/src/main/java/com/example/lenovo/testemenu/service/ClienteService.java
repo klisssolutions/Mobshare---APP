@@ -60,7 +60,7 @@ public interface ClienteService {
     @GET("anuncios_mobile.php")
     Call<List<AnuncioResult>>  filtrarAnuncios(@Query("modo") String modo   , @Query("cbMarca") int idMarca, @Query("cbModelo") int idModelo,
                                                @Query("cbKM") String KM, @Query("cbAvaliacao") String avaliacao,
-                                               @Query("cbTipoVeiculo") int idTipoVeiculo);
+                                               @Query("cbTipoVeiculo") int idTipoVeiculo, @Query("cbUF") String uf, @Query("cbCidade") String cidade);
 
     @GET("anuncios_mobile.php")
     Call<Veiculo>  buscarVeiculo(@Query("modo") String modo, @Query("id") int id);
@@ -94,6 +94,13 @@ public interface ClienteService {
     Call<ApiResult>  avaliar(@Query("modo") String modo, @Query("nota") float nota, @Query("txtDepoimento") String depoimento,
                              @Query("tipoAvaliacao") String tipoAvaliacao,
                              @Query("idLocacao") int idLocacao);
+
+    @GET("endereco.php")
+    Call<String[]>  listarUF(@Query("modo") String modo);
+
+
+    @GET("endereco.php")
+    Call<String[]>  listarCidades(@Query("modo") String modo, @Query("cbUF") String UF);
 
 
 

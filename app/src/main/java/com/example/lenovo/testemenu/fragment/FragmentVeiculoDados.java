@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.lenovo.testemenu.MainActivity;
@@ -18,6 +19,7 @@ import com.example.lenovo.testemenu.presenter.VeiculoPresenter;
 import com.example.lenovo.testemenu.service.ClienteService;
 import com.example.lenovo.testemenu.service.ServiceFactory;
 import com.example.lenovo.testemenu.view.VeiculoView;
+import com.squareup.picasso.Picasso;
 
 import ru.dimorinny.floatingtextbutton.FloatingTextButton;
 
@@ -33,6 +35,7 @@ public class FragmentVeiculoDados extends Fragment implements VeiculoView {
 
     MainActivity activity;
 
+    ImageView imgVeiculo;
     TextView txtNomeModelo;
     TextView txtNomeMarca;
     TextView txtValor;
@@ -52,6 +55,7 @@ public class FragmentVeiculoDados extends Fragment implements VeiculoView {
 
 
 
+        imgVeiculo = v.findViewById(R.id.imgVeiculo);
         txtNomeModelo = v.findViewById(R.id.txtModelo);
         txtNomeMarca = v.findViewById(R.id.txtMarca);
         txtValor = v.findViewById(R.id.txtValor);
@@ -100,6 +104,10 @@ public class FragmentVeiculoDados extends Fragment implements VeiculoView {
         txtAno.setText("Ano "+veiculo.getAno());
         txtNota.setText(veiculo.getNota()+"/5");
         txtValor.setText("R$"+veiculo.getValor()+"/h");
+
+        String urlImagem = "http:10.0.2.2/Mobshare/arquivos/"+veiculo.getFotos().get(0);
+
+        Picasso.get().load(urlImagem).into(imgVeiculo);
 
         String acessorios="";
         if(veiculo.getAcessorios().size() == 1){

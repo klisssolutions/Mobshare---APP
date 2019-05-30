@@ -22,6 +22,7 @@ import com.example.lenovo.testemenu.R;
 import com.example.lenovo.testemenu.model.SolicitacaoLocacao;
 import com.example.lenovo.testemenu.presenter.SolicitacaoLocacaoPresenter;
 import com.example.lenovo.testemenu.service.ServiceFactory;
+import com.example.lenovo.testemenu.utils.Alert;
 import com.example.lenovo.testemenu.view.ViewSolicitacaoLocacao;
 
 import java.util.Calendar;
@@ -30,6 +31,8 @@ public class FragmentsolicitacaoLocacao extends Fragment implements DatePickerDi
 
     static String TAG = "FragmentsolicitacaoLocacao";
     SolicitacaoLocacao solicitacaoLocacao;
+
+    Alert alert;
 
     Boolean flag_inicio; // variavel responsavel por controlar pickerdata e time serão para inicio ou fim, se verdadeiro é para o inicio, se false, para o fim
 
@@ -58,6 +61,8 @@ public class FragmentsolicitacaoLocacao extends Fragment implements DatePickerDi
         View v = inflater.inflate(R.layout.fragment_solicitacao_locacao, container, false);
 
         solicitacaoLocacao = new SolicitacaoLocacao();
+
+        alert = new Alert(getContext());
 
         Bundle bundle = getArguments();
         if(bundle != null){
@@ -127,6 +132,7 @@ public class FragmentsolicitacaoLocacao extends Fragment implements DatePickerDi
                     solicitacaoLocacaoPresenter.solicitarLocacao(solicitacaoLocacao);
 
                 }else{
+                    alert.alert("Atenção", "Autentique-se antes de confirmar a solicitação de locação", "OK");
                     FragmentLogin fragmentLogin = new FragmentLogin();
 
                     activity.navegar(fragmentLogin, fragmentLogin.TAG);
@@ -188,6 +194,9 @@ public class FragmentsolicitacaoLocacao extends Fragment implements DatePickerDi
     @Override
     public void sucesso() {
 
+        alert.alert("Aviso", "Sua solicitação de locação foi registrada, fique de olho em locações para ver se ela será aceita", "OK");
+        FragmentHistorico fragmentHistorico = new FragmentHistorico();
+        activity.navegar(fragmentHistorico, fragmentHistorico.TAG);
     }
 
     @Override
