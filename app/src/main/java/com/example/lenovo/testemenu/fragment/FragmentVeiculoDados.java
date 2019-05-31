@@ -105,9 +105,9 @@ public class FragmentVeiculoDados extends Fragment implements VeiculoView {
         txtNota.setText(veiculo.getNota()+"/5");
         txtValor.setText("R$"+veiculo.getValor()+"/h");
 
-        //String urlImagem = "http:10.0.2.2/Mobshare/arquivos/"+veiculo.getFotos().get(0);
+        String urlImagem = "http:10.0.2.2/Mobshare/arquivos/"+veiculo.getFotos().get(0);
 
-        String urlImagem = "http://www.mob.com.br/Mobshare/arquivos/"+veiculo.getFotos().get(0);
+        //String urlImagem = "http://www.mob.com.br/Mobshare/arquivos/"+veiculo.getFotos().get(0);
 
 
         Picasso.get().load(urlImagem).into(imgVeiculo);

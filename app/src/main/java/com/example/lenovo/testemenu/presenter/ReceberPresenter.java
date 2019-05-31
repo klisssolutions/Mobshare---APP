@@ -33,7 +33,7 @@ public class ReceberPresenter {
             @Override
             public void onResponse(Call<ApiResult> call, Response<ApiResult> response) {
                 apiResult = response.body();
-                Log.d("trui", "deve resposta");
+                Log.d("trui", idLocacao+"");
 
                 if(!apiResult.isErro()){
 

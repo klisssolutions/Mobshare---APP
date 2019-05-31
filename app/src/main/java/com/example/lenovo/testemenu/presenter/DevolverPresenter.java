@@ -23,12 +23,12 @@ public class DevolverPresenter {
         this.clienteService = clienteService;
     }
 
-    public void devolverVeiculo(int idLocacao){
+    public void devolverVeiculo(final int idLocacao){
 
 
 
         Call<ApiResult> call = clienteService.devolver("devolver", idLocacao);
-
+        Log.d("trui", idLocacao+"");
         call.enqueue(new Callback<ApiResult>() {
             @Override
             public void onResponse(Call<ApiResult> call, Response<ApiResult> response) {
@@ -37,7 +37,7 @@ public class DevolverPresenter {
 
                 if(!apiResult.isErro()){
 
-                    devolverView.sucessoDevolver();
+                    devolverView.sucessoDevolver(idLocacao);
 
                 }else{
 

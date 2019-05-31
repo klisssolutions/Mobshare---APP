@@ -25,17 +25,20 @@ public class AvaliacaoPresenter {
         Call<ApiResult> call = clienteService.avaliar("avaliar", avaliacao.getNota(), avaliacao.getDepoimento(),
                 tipoAvaliacao, avaliacao.getIdLocacao());
 
+        Log.d("locacao", avaliacao.getIdLocacao()+"");
+        Log.d("tipoAvaliacao", tipoAvaliacao);
+
         call.enqueue(new Callback<ApiResult>() {
             @Override
             public void onResponse(Call<ApiResult> call, Response<ApiResult> response) {
                 apiResult = response.body();
-                Log.d("sampa", "sucesss");
+                Log.d("sampa", call.request().toString());
                 avaliacaoView.sucessoAvaliacao();
             }
 
             @Override
             public void onFailure(Call<ApiResult> call, Throwable t) {
-                Log.d("sampa", t.getMessage());
+                Log.d("sampa", call.request().toString());
                 avaliacaoView.fracassoAvaliacao();
             }
         });

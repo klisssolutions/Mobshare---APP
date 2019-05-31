@@ -112,6 +112,7 @@ public class HistoricoAdapter extends ArrayAdapter<VHistorico_Locacao> implement
         Bundle bundle = new Bundle();
         bundle.putString("tipoAvaliacao", "cliente");
         bundle.putInt("idLocacao", idLocacao);
+        Log.d("serto", idLocacao+"");
         fragmentAvaliacao.setArguments(bundle);
 
         activity.navegar(fragmentAvaliacao, fragmentAvaliacao.TAG);
@@ -123,9 +124,16 @@ public class HistoricoAdapter extends ArrayAdapter<VHistorico_Locacao> implement
     }
 
     @Override
-    public void sucessoDevolver() {
+    public void sucessoDevolver(int idLocacao) {
         alert.alert("Pronto!", "Você confirmou a devolução do veiculo", "Ok");
         fragmentAvaliacao = new FragmentAvaliacao();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("tipoAvaliacao", "veiculo");
+        bundle.putInt("idLocacao", idLocacao);
+        Log.d("serto", idLocacao+"");
+        fragmentAvaliacao.setArguments(bundle);
+
         activity.navegar(fragmentAvaliacao, fragmentAvaliacao.TAG);
 
     }
