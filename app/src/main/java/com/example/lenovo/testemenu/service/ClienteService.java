@@ -19,8 +19,8 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface ClienteService {
-    //String URL_BASE = "http://www.mob.com.br/Mobshare/API/"; //trecho sujeito a erro
-    String URL_BASE = "http://10.0.2.2/Mobshare/API/";
+    String URL_BASE = "http://www.mob.com.br/Mobshare/API/"; //trecho sujeito a erro
+    //String URL_BASE = "http://10.0.2.2/Mobshare/API/";
 
 
     //@Field para passar via POST
