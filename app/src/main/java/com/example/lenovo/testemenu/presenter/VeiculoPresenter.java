@@ -39,7 +39,7 @@ public class VeiculoPresenter {
 
             @Override
             public void onFailure(Call<Veiculo> call, Throwable t) {
-                Log.d("leo", t.getMessage());
+                Log.d("leo", call.request().toString());
             }
         });
     }

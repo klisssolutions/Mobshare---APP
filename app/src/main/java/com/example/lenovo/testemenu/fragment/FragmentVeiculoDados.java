@@ -113,21 +113,25 @@ public class FragmentVeiculoDados extends Fragment implements VeiculoView {
         Picasso.get().load(urlImagem).into(imgVeiculo);
 
         String acessorios="";
-        if(veiculo.getAcessorios().size() == 1){
-            acessorios = "Contém "+veiculo.getAcessorios().get(0);
 
-        }else if(veiculo.getAcessorios().size() == 2){
-            acessorios = "Contém "+veiculo.getAcessorios().get(0);
-            acessorios = acessorios+", "+veiculo.getAcessorios().get(1);
+        if(veiculo.getAcessorios() != null){
+            if(veiculo.getAcessorios().size() == 1){
+                acessorios = "Contém "+veiculo.getAcessorios().get(0);
 
-        }else if(veiculo.getAcessorios().size() > 3){
-            acessorios = "Contém "+veiculo.getAcessorios().get(0);
-
-            for(int i = 0; i<veiculo.getAcessorios().size()-1; i++){
+            }else if(veiculo.getAcessorios().size() == 2){
+                acessorios = "Contém "+veiculo.getAcessorios().get(0);
                 acessorios = acessorios+", "+veiculo.getAcessorios().get(1);
+
+            }else if(veiculo.getAcessorios().size() > 3){
+                acessorios = "Contém "+veiculo.getAcessorios().get(0);
+
+                for(int i = 0; i<veiculo.getAcessorios().size()-1; i++){
+                    acessorios = acessorios+", "+veiculo.getAcessorios().get(1);
+                }
+                acessorios = acessorios+", "+veiculo.getAcessorios().get(veiculo.getAcessorios().size() - 1);
             }
-            acessorios = acessorios+", "+veiculo.getAcessorios().get(veiculo.getAcessorios().size() - 1);
         }
+
 
 
         txtAcessorio.setText(acessorios);
